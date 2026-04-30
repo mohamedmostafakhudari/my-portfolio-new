@@ -1,0 +1,204 @@
+{
+	"users": [
+		{
+			"id": "u1",
+			"name": "Sara Ahmed",
+			"username": "sara_writes",
+			"email": "sara@example.com",
+			"avatar": "https://i.pravatar.cc/150?img=47",
+			"bio": "Frontend developer and technical writer. I write about React, Next.js, and CSS.",
+			"role": "writer",
+			"createdAt": "2024-01-15"
+		},
+		{
+			"id": "u2",
+			"name": "Karim Hassan",
+			"username": "karimdev",
+			"email": "karim@example.com",
+			"avatar": "https://i.pravatar.cc/150?img=12",
+			"bio": "Full-stack engineer. Obsessed with performance and clean architecture.",
+			"role": "writer",
+			"createdAt": "2024-02-20"
+		},
+		{
+			"id": "u3",
+			"name": "Admin User",
+			"username": "admin",
+			"email": "admin@example.com",
+			"avatar": "https://i.pravatar.cc/150?img=68",
+			"bio": "Platform administrator.",
+			"role": "admin",
+			"createdAt": "2024-01-01"
+		},
+		{
+			"id": "u4",
+			"name": "Lena Müller",
+			"username": "lena_codes",
+			"email": "lena@example.com",
+			"avatar": "https://i.pravatar.cc/150?img=32",
+			"bio": "Backend engineer. Python and TypeScript enthusiast.",
+			"role": "reader",
+			"createdAt": "2024-03-10"
+		}
+	],
+
+	"categories": [
+		{ "id": "c1", "name": "Next.js", "slug": "nextjs", "postCount": 4 },
+		{ "id": "c2", "name": "React", "slug": "react", "postCount": 3 },
+		{ "id": "c3", "name": "TypeScript", "slug": "typescript", "postCount": 2 },
+		{ "id": "c4", "name": "CSS", "slug": "css", "postCount": 2 },
+		{ "id": "c5", "name": "Career", "slug": "career", "postCount": 1 }
+	],
+
+	"tags": [
+		{ "id": "t1", "name": "beginner", "slug": "beginner" },
+		{ "id": "t2", "name": "performance", "slug": "performance" },
+		{ "id": "t3", "name": "tutorial", "slug": "tutorial" },
+		{ "id": "t4", "name": "opinion", "slug": "opinion" },
+		{ "id": "t5", "name": "tooling", "slug": "tooling" },
+		{ "id": "t6", "name": "architecture", "slug": "architecture" }
+	],
+
+	"posts": [
+		{
+			"id": "p1",
+			"title": "Getting Started with the Next.js App Router",
+			"slug": "getting-started-nextjs-app-router",
+			"excerpt": "The App Router is the modern way to build Next.js applications. In this post we cover layouts, loading states, and error boundaries from scratch.",
+			"content": "## What is the App Router?\n\nThe App Router was introduced in Next.js 13 and became stable in Next.js 14. It replaces the older Pages Router with a file-system based routing model built on React Server Components.\n\n## Layouts\n\nEvery `layout.tsx` file wraps every page below it in the folder tree. The root layout is mandatory and must include `<html>` and `<body>` tags.\n\n## Loading States\n\nAdd a `loading.tsx` file next to any `page.tsx` and Next.js will automatically show it while the page fetches data.\n\n## Error Boundaries\n\nAdd an `error.tsx` file to catch runtime errors in a route segment without crashing the whole app.",
+			"coverImage": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80",
+			"authorId": "u1",
+			"categoryId": "c1",
+			"tags": ["t1", "t3"],
+			"status": "published",
+			"views": 1240,
+			"likesCount": 87,
+			"commentsCount": 12,
+			"createdAt": "2024-03-01",
+			"updatedAt": "2024-03-05"
+		},
+		{
+			"id": "p2",
+			"title": "Server Actions Explained: No More API Routes",
+			"slug": "server-actions-explained",
+			"excerpt": "Server Actions let you run server-side code directly from your components. Here is everything you need to know to replace your API routes.",
+			"content": "## What are Server Actions?\n\nServer Actions are async functions that run on the server. You can call them directly from client or server components without writing a separate API route.\n\n## Basic Example\n\n```ts\n'use server'\n\nexport async function createPost(formData: FormData) {\n  const title = formData.get('title') as string\n  await db.post.create({ data: { title } })\n  revalidatePath('/blog')\n}\n```\n\n## When to still use Route Handlers\n\nUse Route Handlers for webhooks, third-party callbacks, or when you need full HTTP control. For everything else, Server Actions are simpler.",
+			"coverImage": "https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=800&q=80",
+			"authorId": "u1",
+			"categoryId": "c1",
+			"tags": ["t3", "t6"],
+			"status": "published",
+			"views": 980,
+			"likesCount": 64,
+			"commentsCount": 8,
+			"createdAt": "2024-03-10",
+			"updatedAt": "2024-03-10"
+		},
+		{
+			"id": "p3",
+			"title": "TypeScript Generics: A Practical Guide",
+			"slug": "typescript-generics-practical-guide",
+			"excerpt": "Generics are one of the most powerful TypeScript features. This guide walks through real use cases you will encounter every day.",
+			"content": "## Why Generics?\n\nWithout generics you end up writing the same logic for different types, or you lose type safety by using `any`. Generics solve both problems.\n\n## A Simple Generic Function\n\n```ts\nfunction getFirst<T>(arr: T[]): T {\n  return arr[0]\n}\n\nconst first = getFirst<string>(['a', 'b', 'c']) // type: string\n```\n\n## Generic Constraints\n\n```ts\nfunction getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {\n  return obj[key]\n}\n```",
+			"coverImage": "https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&q=80",
+			"authorId": "u2",
+			"categoryId": "c3",
+			"tags": ["t1", "t3"],
+			"status": "published",
+			"views": 760,
+			"likesCount": 52,
+			"commentsCount": 5,
+			"createdAt": "2024-03-15",
+			"updatedAt": "2024-03-15"
+		},
+		{
+			"id": "p4",
+			"title": "CSS Container Queries Are Here",
+			"slug": "css-container-queries",
+			"excerpt": "Container queries let components respond to their parent size instead of the viewport. This changes how we think about responsive design.",
+			"content": "## The Problem with Media Queries\n\nMedia queries respond to the viewport, not the component's own context. A card inside a narrow sidebar and the same card in a wide grid need different layouts — but a media query cannot tell them apart.\n\n## Enter Container Queries\n\n```css\n.card-wrapper {\n  container-type: inline-size;\n}\n\n@container (min-width: 400px) {\n  .card {\n    display: flex;\n    flex-direction: row;\n  }\n}\n```\n\nNow the card responds to its wrapper, not the screen.",
+			"coverImage": "https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?w=800&q=80",
+			"authorId": "u2",
+			"categoryId": "c4",
+			"tags": ["t2", "t4"],
+			"status": "published",
+			"views": 540,
+			"likesCount": 41,
+			"commentsCount": 3,
+			"createdAt": "2024-03-20",
+			"updatedAt": "2024-03-20"
+		},
+		{
+			"id": "p5",
+			"title": "How I Got My First Freelance Client as a Developer",
+			"slug": "first-freelance-client",
+			"excerpt": "Landing the first client is the hardest part. Here is the exact approach I used: no cold emails, no job boards, just one focused strategy.",
+			"content": "## Stop Applying, Start Showing\n\nMost developers look for clients the wrong way. They send cold emails and browse job boards. The approach that worked for me was simpler: build one thing publicly and let clients come to you.\n\n## What I Built\n\nI created a restaurant menu management demo — a real working app, not a mockup. I posted it in a local business Facebook group with a simple message: 'I built this for a restaurant. If you want something similar, message me.'\n\n## The Result\n\nThree restaurant owners messaged within a week. I closed one project that same month.",
+			"coverImage": "https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=800&q=80",
+			"authorId": "u1",
+			"categoryId": "c5",
+			"tags": ["t4"],
+			"status": "published",
+			"views": 1890,
+			"likesCount": 134,
+			"commentsCount": 21,
+			"createdAt": "2024-03-25",
+			"updatedAt": "2024-03-25"
+		},
+		{
+			"id": "p6",
+			"title": "React useMemo and useCallback: When to Actually Use Them",
+			"slug": "react-usememo-usecallback",
+			"excerpt": "Most developers overuse useMemo and useCallback. This post explains when they actually help and when they just add noise.",
+			"content": "## The Misconception\n\n`useMemo` and `useCallback` do not make your app faster by default. They add overhead. The question is whether that overhead is worth the optimization.\n\n## When useMemo Helps\n\nUse `useMemo` when the computation is genuinely expensive and the dependencies change infrequently.\n\n```tsx\nconst sortedList = useMemo(() => {\n  return items.sort((a, b) => a.name.localeCompare(b.name))\n}, [items])\n```\n\n## When to Skip It\n\nIf the computation is simple, the memoization cost exceeds the savings. Just compute it inline.",
+			"coverImage": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&q=80",
+			"authorId": "u2",
+			"categoryId": "c2",
+			"tags": ["t2", "t4"],
+			"status": "draft",
+			"views": 0,
+			"likesCount": 0,
+			"commentsCount": 0,
+			"createdAt": "2024-04-01",
+			"updatedAt": "2024-04-01"
+		}
+	],
+
+	"comments": [
+		{
+			"id": "cm1",
+			"postId": "p1",
+			"authorId": "u2",
+			"body": "Great intro! The part about loading.tsx saved me a lot of confusion. I had been manually tracking loading state in useState.",
+			"createdAt": "2024-03-02"
+		},
+		{
+			"id": "cm2",
+			"postId": "p1",
+			"authorId": "u4",
+			"body": "Does this work the same way for the Pages Router? I am still on an older project.",
+			"createdAt": "2024-03-03"
+		},
+		{
+			"id": "cm3",
+			"postId": "p1",
+			"authorId": "u1",
+			"body": "Hi Lena — no, loading.tsx is App Router only. In the Pages Router you would handle loading state manually with router events.",
+			"createdAt": "2024-03-03"
+		},
+		{
+			"id": "cm4",
+			"postId": "p2",
+			"authorId": "u4",
+			"body": "This finally clicked for me. I had been creating an API route for every single form. Server Actions are so much cleaner.",
+			"createdAt": "2024-03-11"
+		},
+		{
+			"id": "cm5",
+			"postId": "p5",
+			"authorId": "u2",
+			"body": "The Facebook group idea is underrated. Most devs ignore local communities completely.",
+			"createdAt": "2024-03-26"
+		}
+	]
+}

@@ -1,0 +1,42 @@
+[
+	{
+		"title": "Express",
+		"src": "/express.svg"
+	},
+	{
+		"title": "HTML 5",
+		"src": "/html5.svg"
+	},
+	{
+		"title": "MongoDB",
+		"src": "/mongodb.svg"
+	},
+	{
+		"title": "Material UI",
+		"src": "/mui.svg"
+	},
+	{
+		"title": "NEXT JS",
+		"src": "/nextjs.svg"
+	},
+	{
+		"title": "NodeJS",
+		"src": "/nodejs.svg"
+	},
+	{
+		"title": "React",
+		"src": "/react.svg"
+	},
+	{
+		"title": "Redux",
+		"src": "/redux.svg"
+	},
+	{
+		"title": "Tailwind",
+		"src": "/tailwind.svg"
+	},
+	{
+		"title": "Vercel",
+		"src": "/vercel.svg"
+	}
+]

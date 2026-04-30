@@ -1,0 +1,42 @@
+[
+	{
+		"id": "1",
+		"slug": "ecommerce-platform",
+		"title": "E-Commerce Platform",
+		"description": "A scalable online shopping platform with product management, secure checkout, and real-time order tracking.",
+		"image": "https://placehold.co/600x400/png",
+		"techStack": ["React", "Node.js", "MongoDB", "Stripe"],
+		"liveUrl": "https://ecommerce-demo.example.com",
+		"githubUrl": "https://github.com/mockuser/ecommerce-platform"
+	},
+	{
+		"id": "2",
+		"slug": "task-management-app",
+		"title": "Task Management App",
+		"description": "A collaborative productivity app for managing tasks, deadlines, and team workflows with drag-and-drop support.",
+		"image": "https://placehold.co/600x400/png",
+		"techStack": ["Next.js", "TypeScript", "Firebase", "Tailwind CSS"],
+		"liveUrl": "https://taskflow-demo.example.com",
+		"githubUrl": "https://github.com/mockuser/task-management-app"
+	},
+	{
+		"id": "3",
+		"slug": "fitness-tracker-dashboard",
+		"title": "Fitness Tracker Dashboard",
+		"description": "An interactive dashboard for tracking workouts, calories, and fitness goals with visual analytics.",
+		"image": "https://placehold.co/600x400/png",
+		"techStack": ["Vue.js", "Express.js", "PostgreSQL", "Chart.js"],
+		"liveUrl": "https://fittrack-demo.example.com",
+		"githubUrl": "https://github.com/mockuser/fitness-tracker-dashboard"
+	},
+	{
+		"id": "4",
+		"slug": "ai-chat-assistant",
+		"title": "AI Chat Assistant",
+		"description": "A conversational AI assistant with context-aware responses, chat history, and multi-language support.",
+		"image": "https://placehold.co/600x400/png",
+		"techStack": ["React", "OpenAI API", "Node.js", "Redis"],
+		"liveUrl": "https://aichat-demo.example.com",
+		"githubUrl": "https://github.com/mockuser/ai-chat-assistant"
+	}
+]
