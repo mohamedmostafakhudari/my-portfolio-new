@@ -2,7 +2,6 @@
 import { Button } from "@/components/ui/button";
 import { Field, FieldError, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
-import UserSession from "@/components/Usersession";
 import { signIn } from "next-auth/react";
 import { Controller, useForm } from "react-hook-form";
 
@@ -66,7 +65,6 @@ export default function SignInPage() {
 			>
 				Sign in with GitHub
 			</Button>
-			<UserSession />
 		</main>
 	);
 }
