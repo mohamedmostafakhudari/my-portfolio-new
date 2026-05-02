@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { getProject, getProjects } from "@/lib/data";
+import { getProject, getProjectsStaticParams } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -8,7 +8,7 @@ import { notFound } from "next/navigation";
 export async function generateStaticParams() {
 	/* this function is called as one of the steps that happen during build time alongside
  the file optimizations, prerendering (HTML + RSCP), and assets preparations for deployment */
-	const projects = await getProjects();
+	const projects = await getProjectsStaticParams();
 
 	return projects.map((p) => ({
 		slug: p.slug,
