@@ -1,6 +1,9 @@
 "use client";
+import LoginBtn from "@/components/auth/LoginBtn";
+import LogoutBtn from "@/components/auth/LogoutBtn";
 import useIsVisible from "@/hooks/useIsVisible";
 import clsx from "clsx";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRef } from "react";
@@ -24,6 +27,13 @@ const links = [
 	},
 ];
 
+const protectedLinks = [
+	{
+		label: "Admin",
+		path: "/admin",
+	},
+];
+
 const Navbar = () => {
 	const ref = useRef(null);
 	const isVisible = useIsVisible(ref);
@@ -32,7 +42,7 @@ const Navbar = () => {
 		<>
 			<nav
 				className={clsx(
-					"bg-background",
+					"bg-background mb-10",
 					isVisible ? "opacity-100" : "opacity-0",
 				)}
 				ref={ref}
@@ -42,7 +52,7 @@ const Navbar = () => {
 			<div className="absolute top-0 left-0 w-full h-full pointer-events-none">
 				<nav
 					className={clsx(
-						"bg-card sticky top-0 z-10 pointer-events-auto",
+						"bg-card sticky top-0 z-30 pointer-events-auto",
 						isVisible ? "opacity-0" : "opacity-100",
 					)}
 				>
@@ -55,12 +65,14 @@ const Navbar = () => {
 
 const NavContent = () => {
 	const currentPathname = usePathname();
+	const { data: session } = useSession();
+	const navLinks = session?.user ? links.concat(protectedLinks) : links;
 
 	return (
 		<div className="container flex items-center justify-between px-6 mx-auto max-w-4xl">
 			<h1 className="text-xl font-bold text-primary">Mohamed Mostafa</h1>
 			<div className="flex gap-8 items-center">
-				{links.map(({ label, path }) => (
+				{navLinks.map(({ label, path }) => (
 					<Link
 						key={label}
 						href={path}
@@ -72,6 +84,7 @@ const NavContent = () => {
 					</Link>
 				))}
 			</div>
+			{session?.user ? <LogoutBtn /> : <LoginBtn />}
 		</div>
 	);
 };

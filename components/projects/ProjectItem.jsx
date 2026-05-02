@@ -1,3 +1,4 @@
+import ProjectImage from "@/components/projects/ProjectImage";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -7,11 +8,10 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import Image from "next/image";
 import Link from "next/link";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
-const ProjectItem = ({
+const ProjectItem = async ({
 	id,
 	slug,
 	title,
@@ -23,12 +23,9 @@ const ProjectItem = ({
 }) => {
 	return (
 		<Card className="relative mx-auto w-full">
-			<Image
-				width="300"
-				height="300"
-				src={image || "https://avatar.vercel.sh/shadcn1"}
-				alt={title || "cover image"}
-				className="relative z-20 aspect-video w-full object-cover brightness-60 grayscale dark:brightness-40"
+			<ProjectImage
+				image={image}
+				title={title}
 			/>
 			<CardHeader>
 				<div className="flex items-center justify-between">

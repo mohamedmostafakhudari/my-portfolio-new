@@ -1,5 +1,6 @@
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar.jsx";
+import { SessionProvider } from "next-auth/react";
 import { DM_Sans, Sora } from "next/font/google";
 import "./globals.css";
 
@@ -24,8 +25,10 @@ export default function RootLayout({ children }) {
 			lang="en"
 			className={`${dmSans.variable} ${sora.variable} h-full antialiased`}
 		>
-			<body className="min-h-full grid grid-cols-1 items-start">
-				<Navbar />
+			<body className="min-h-full grid grid-cols-1 grid-rows-[auto_1fr] items-start">
+				<SessionProvider>
+					<Navbar />
+				</SessionProvider>
 				<div className="container mx-auto max-w-4xl">{children}</div>
 				<Footer />
 			</body>

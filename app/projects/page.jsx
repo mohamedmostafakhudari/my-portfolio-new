@@ -2,8 +2,10 @@ import ProjectItem from "@/components/projects/ProjectItem";
 import { getProjects } from "@/lib/data";
 
 const ProjectsPage = async () => {
-	const projects = await getProjects();
-
+	const { projects, error } = await getProjects();
+	if (error) {
+		throw new Error(error.message);
+	}
 	return (
 		<div className="px-4">
 			<h1 className="text-5xl text-center">My Projects</h1>
