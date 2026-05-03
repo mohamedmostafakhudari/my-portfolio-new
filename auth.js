@@ -8,7 +8,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 	providers: [GitHub],
 	callbacks: {
 		/*
-      windows to the auth process flow, each step controlled by a cb.
+      windows to the auth process flow or something like interceptors, each step controlled by a cb.
       allows access control without a db or integrating external db or APIs
       the flow:
     [account] -> jwt() -> session()
@@ -21,8 +21,10 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 		authorized: async ({ auth }) => {
 			// Logged in users are authenticated, otherwise redirect to login page (default)
 			// console.log(auth);
+
 			return auth?.user?.email === process.env.ADMIN_EMAIL;
 		},
+
 		async jwt({ token, account, user }) {
 			// account only exists on first sign-in
 			/* that's why we use it as a condition what is to be done on first sign-in */
